@@ -1,0 +1,11 @@
+Index: src/HomeWorks/conflictFile.txt
+===================================================================
+diff --git a/src/HomeWorks/conflictFile.txt b/src/HomeWorks/conflictFile.txt
+--- a/src/HomeWorks/conflictFile.txt	
++++ b/src/HomeWorks/conflictFile.txt	
+@@ -1,2 +1,1 @@
+-first there was chicken or
+-first there was an egg?
+\ No newline at end of file
++first there was chicken
+\ No newline at end of file
