@@ -1,5 +1,5 @@
 package HomeWorks.lesson05;
 
-public class manePractice {
+public class mainPractice {
     // OOP: Practice. Developing game.
 }
