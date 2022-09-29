@@ -1,6 +1,6 @@
 package HomeWorks.lesson03.entity;
 
-import HomeWorks.lesson03.mainInheritance;
+import HomeWorks.lesson03.MainInheritance;
 
 public class Support extends User{
 
@@ -20,7 +20,7 @@ public class Support extends User{
     }
 
     public Boolean checkString(String checkStr) {
-        for (String stringOfQuatrain : mainInheritance.quatrain) {
+        for (String stringOfQuatrain : MainInheritance.quatrain) {
             if (stringOfQuatrain.indexOf(checkStr) >= 0) {
                 System.out.println("String consists in quatrain");
                 return true;

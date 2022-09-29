@@ -11,7 +11,7 @@ import HomeWorks.lesson04.entity.people.Doctor;
 import HomeWorks.lesson04.entity.people.Driver;
 import HomeWorks.lesson04.entity.people.Warrior;
 
-    public class mainPolymorphism {
+    public class MainPolymorphism {
         public static void main(String[] args) {
             //test
             System.out.println("test");

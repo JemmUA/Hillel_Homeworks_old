@@ -1,6 +1,6 @@
 package HomeWorks.lesson01;
 
-public class mainDataTypes {
+public class MainDataTypes {
     public static void main(String[] args) {
 
         // Homework 01

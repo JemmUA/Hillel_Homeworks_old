@@ -1,5 +1,5 @@
 package HomeWorks.lesson03.entity;
-import HomeWorks.lesson03.mainInheritance;
+import HomeWorks.lesson03.MainInheritance;
 
 import java.util.Scanner;
 
@@ -85,9 +85,9 @@ public class User {
         System.out.println("please, type text:");
         Scanner typeScanner = new Scanner(System.in);
         String type = typeScanner.nextLine();
-        mainInheritance.stringForCheck = type;
+        MainInheritance.stringForCheck = type;
 //        typeScanner.close();
-        System.out.println("Typed: " + mainInheritance.stringForCheck);
+        System.out.println("Typed: " + MainInheritance.stringForCheck);
     }
     public String getClassShort (String classFull) {
         String[] classWords = classFull.split("\\.");

@@ -8,7 +8,7 @@ import HomeWorks.lesson02.entity.TVset;
 import HomeWorks.lesson02.entity.WashingMachine;
 
 
-public class mainEncapsulation {
+public class MainEncapsulation {
     public static void main(String[] args) {
 
         // Homework 02

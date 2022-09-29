@@ -1,6 +1,6 @@
 package HomeWorks.lesson03.entity;
 
-import HomeWorks.lesson03.mainInheritance;
+import HomeWorks.lesson03.MainInheritance;
 
 public class Admin extends Support {
 
@@ -12,7 +12,7 @@ public class Admin extends Support {
     public void clearIfWrong(boolean booleanData) {
         if (booleanData == true) {
             System.out.println("Quatrain deleted");
-            mainInheritance.quatrain = null;
+            MainInheritance.quatrain = null;
         } else {
             System.out.println("Quatrain is not deleted");
         }

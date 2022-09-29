@@ -1,6 +1,6 @@
 package HomeWorks.lesson07;
 
-public class mainGitAdv {
+public class MainGitAdv {
     // Git advanced.
 
 /*

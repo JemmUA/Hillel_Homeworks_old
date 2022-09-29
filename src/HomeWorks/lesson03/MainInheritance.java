@@ -5,7 +5,7 @@ import HomeWorks.lesson03.entity.CheckService;
 import HomeWorks.lesson03.entity.Support;
 import HomeWorks.lesson03.entity.User;
 
-public class mainInheritance {
+public class MainInheritance {
     //Define constant
     public static String[] quatrain = {
             "Земля і небо борються в мені,",

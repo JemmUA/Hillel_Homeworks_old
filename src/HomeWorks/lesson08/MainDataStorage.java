@@ -1,10 +1,10 @@
 package HomeWorks.lesson08;
 
-public class mainDataStorage {
+public class MainDataStorage {
     public static void main(String[] args) {
         // No homework
 
-        Object object = new mainDataStorage();
+        Object object = new MainDataStorage();
         Object object2 = object;
         String s = new String("10");
         String s2 = new String("10");
