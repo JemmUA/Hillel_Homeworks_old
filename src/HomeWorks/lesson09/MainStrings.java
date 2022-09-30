@@ -11,17 +11,22 @@ public class MainStrings {
         //Homework #07 for lesson #09
 
         //StringHelper HOMEWORK
+        System.out.println("HOMEWORK");
+        System.out.println("StringHelper");
+        System.out.println("------------");
         String string = "            My string    ";
         char[] array = "      and array   "
                 .toCharArray();
         StringHelper testString = new StringHelper();
         testString.transform(string, array);
-
-        MatchesHelper matchesHelper = new MatchesHelper();
+        System.out.println("------------");
 
         //MatchesHelper test ==========================
+        MatchesHelper matchesHelper = new MatchesHelper();
         System.out.println();
-        System.out.println("-------TEST-------");
+
+        System.out.println("MatchesHelper");
+        System.out.println("------------");
         System.out.println("PHONE");
         String[] phones = {
                 "+38 (050) 334-33-45",
@@ -61,21 +66,21 @@ public class MainStrings {
 
         System.out.println();
         System.out.println("Finding matches for string:");
-        System.out.println("31.01.2012 +38 (050) 334-33-45 simple@example.com +38 (050) 334 33 45 27 листопада 2001 very.common@example.com 8 (050) 334 33 45 admin@mailserver1 ");
-        matchesHelper.detectPattern("31.01.2012 +38 (050) 334-33-45 simple@example.com +38 (050) 334 33 45 27 листопада 2001 very.common@example.com 8 (050) 334 33 45 admin@mailserver1 ");
+        String strToCheck = "31.01.2012 +38 (050) 334-33-45 simple@example.com +38 (050) 334 33 45 27 листопада 2001 very.common@example.com 8 (050) 334 33 45 admin@mailserver1 ";
+        System.out.println(strToCheck);
+        matchesHelper.detectPattern(strToCheck);
         //MatchesHelper test END ============================
-        System.out.println("----- Test END -----");
 
         //MatchesHelper HOMEWORK
         System.out.println();
         System.out.println("----- Input -----");
-//        String myPattern =
-//                "Place here phone, e-mail or date of birth";
-//        matchesHelper.detectPattern(myPattern);
+//        String myString =
+//                "Place here phone, e-mail, date of birth or arbitrary string";
+//        matchesHelper.detectPattern(myString);
 
         boolean notTired = true;
         Scanner typeScanner = new Scanner(System.in);
-        System.out.println("Please, type phone, e-mail or date of birth for strict matches\nOR string to find matches \nOR type \"q\" for exit:");
+        System.out.println("Please, type phone, e-mail or date of birth for strict matches\nOR arbitrary string to find matches \nOR type \"q\" for exit:");
         while (notTired){
             String type = typeScanner.nextLine();
             if (type.toLowerCase().equals("q")){
