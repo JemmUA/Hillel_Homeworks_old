@@ -1,4 +1,6 @@
 package HomeWorks.lesson10.exception;
 
-public class WrongSumException {
+import java.util.InputMismatchException;
+
+public class WrongSumException extends InputMismatchException {
 }

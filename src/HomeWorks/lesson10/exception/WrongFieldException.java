@@ -1,4 +1,7 @@
 package HomeWorks.lesson10.exception;
 
-public class WrongFieldException {
+import java.util.zip.DataFormatException;
+
+public class WrongFieldException extends DataFormatException {
+
 }

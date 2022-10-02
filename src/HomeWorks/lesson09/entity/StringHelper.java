@@ -4,18 +4,18 @@ public class StringHelper {
     public String transform(String stringIn, char[] arrayCharsIn) {
         if (arrayCharsIn == null) {
             System.out.println("Array is null. Transformation is canceled.");
-            return "";
+            return null;
         }
 
         String stringFromArray = new String(arrayCharsIn);
 
         if (stringIn.isBlank()){
             System.out.println("Incoming string is blank. Transformation is canceled.");
-            return "";
+            return null;
         }
         if (stringFromArray.isBlank()){
             System.out.println("Incoming string array is blank. Transformation is canceled.");
-            return "";
+            return null;
         }
 
         stringIn = stringIn.toUpperCase();
@@ -35,7 +35,7 @@ public class StringHelper {
         String stringSum = stringIn.concat(" ").concat(stringFromArray);
         System.out.println(String.format("Concat strings = %s", stringSum)); // no need to use 'format' here - just for demo and funny )
 
-        return this.cutMiddle(stringSum,1);
+        return cutMiddle(stringSum,1);
     }
 
     private String cutMiddle(String string, int cutSize) {
