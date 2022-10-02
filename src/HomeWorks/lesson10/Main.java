@@ -84,11 +84,5 @@ public class Main {
         transaction.sendMoney(sender,recipient.getClientAccountID());
         System.out.println();
         System.out.println("====== TRANSACTION COMPLETED ======");
-//        System.out.println("-----------------------------------");
-
-
-
-
-
     }
 }
