@@ -25,7 +25,7 @@ public class Main {
         System.out.println("=======================");
 
         // set sender AccountID
-        System.out.println("Please, enter the account ID for the sender. \nAccount ID must contain 10 symbols:");
+        System.out.println("Please, enter the account ID for the SENDER. \nAccount ID must contain 10 symbols:");
         do {
             sender.setClientAccountID(scanner.nextLine().strip());
             try {
@@ -38,7 +38,7 @@ public class Main {
         System.out.println("------------------------------------");
 
         // set recipient AccountID
-        System.out.println("Please, enter the account ID for the recipient. \nAccount ID must contain 10 symbols:");
+        System.out.println("Please, enter the account ID for the RECIPIENT. \nAccount ID must contain 10 symbols:");
         do {
             recipient.setClientAccountID(scanner.nextLine().strip());
             try {
@@ -51,7 +51,7 @@ public class Main {
         System.out.println("---------------------------------------");
 
         // set sum of transaction
-        System.out.println("Please, enter the transaction amount. Maximum sum - 10 000:");
+        System.out.println("Please, enter the TRANSACTION AMOUNT. Maximum sum - 10 000:");
         double input = 0;
         do {
             System.out.println("Please, enter amount from 0,01 to 10 000:");
@@ -74,6 +74,7 @@ public class Main {
             }
 
         } while (input < 0.01 || input > 10_000);
+        scanner.close();
 
         // accept sum
         sender.setSum(input);

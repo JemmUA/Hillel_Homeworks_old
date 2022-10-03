@@ -6,7 +6,7 @@ import HomeWorks.lesson10.exception.WrongSumException;
 
 public class Helper {
 
-    public void checkAccountID(String accountID) throws  WrongFieldException {
+    public void checkAccountID(String accountID) throws WrongFieldException {
         if (accountID.length() != 10){
             throw new WrongFieldException();
         }
