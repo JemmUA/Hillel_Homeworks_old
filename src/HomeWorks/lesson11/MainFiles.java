@@ -1,11 +1,9 @@
 package HomeWorks.lesson11;
 
+import HomeWorks.lesson11.entity.Account;
 import HomeWorks.lesson11.entity.FileWorkshop;
-import HomeWorks.lesson11.entity.ScanWorkshop;
 import HomeWorks.lesson11.entity.TimeWorkshop;
 import HomeWorks.lesson11.util.Optimizer;
-
-import java.util.Scanner;
 
 public class MainFiles {
     public static String fileLastOperation;
@@ -16,13 +14,11 @@ public class MainFiles {
                 "======================================================";
         System.out.println(hwTitle);
 
-        String dataToWrite;
         final String quatrain = "Еней був парубок моторний\n" +
                 "І хлопець хоть куди козак,\n" +
                 "Удавсь на всеє зле проворний,\n" +
                 "Завзятійший од всіх бурлак.\n";
-        dataToWrite = quatrain;
-        String verifyQuatrain;
+
         String currentDateTime = new TimeWorkshop().getCurrentDateTime();
 
         FileWorkshop fileWorkshop = new FileWorkshop();
@@ -37,11 +33,6 @@ public class MainFiles {
         String logFilePath = "src/resources/logs/";
         String logFileName = "log.txt";
 
-
-        // 1.
-        System.out.println("Task #1. Quatrain.");
-        System.out.println("----------------------");
-
         //check and create folders
         fileWorkshop.checkCreatePath(logFilePath+logFileName);
         fileWorkshop.checkCreatePath(myFilePath+myFileName);
@@ -50,8 +41,11 @@ public class MainFiles {
         //Open log session
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Start HOMEWORK #09 - ".concat(currentDateTime)  , '=', '=', true, false);
 
+        // 1.
+        System.out.println("Task #1. Quatrain.");
+        System.out.println("----------------------");
         System.out.println("Wright file, write log");
-        optimizer.writeAndLog(dataToWrite, myFilePath, myFileName, false, fileWorkshop, currentDateTime, logFilePath, logFileName, null, ' ', ' ', false, false);
+        optimizer.writeAndLog(quatrain, myFilePath, myFileName, false, fileWorkshop, currentDateTime, logFilePath, logFileName, null, ' ', ' ', false, false);
         System.out.println("Verification file...");
         System.out.println();
         String stringFromFile = fileWorkshop.readFile(myFilePath, myFileName);
@@ -63,65 +57,22 @@ public class MainFiles {
         }
 
         //2.
-        System.out.println();
-        System.out.println("Task #2. Registration.");
-        System.out.println("----------------------");
-        fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration started - ".concat(currentDateTime), ' ', ' ', false, false);
-        boolean regPassed = false;
-        ScanWorkshop scan = new ScanWorkshop();
-
-        System.out.println("Please, enter new login:");
-        String login = scan.readConsole();
-        System.out.println("New login accepted: " + login);
-        System.out.println("Please, enter new password:");
-        String password = scan.readConsole();
-        System.out.println("Please, repeat new password: " + "*".repeat(password.length()));
-        String passwordMatching = scan.readConsole();
-        if (password.equals(passwordMatching)) {
-            System.out.println("New password accepted: " + password);
-            System.out.println("Registration SUCCESSFUL." );
-            optimizer.writeAndLog(login.concat(",").concat(password), userFilePath, userFileName, false, fileWorkshop, currentDateTime, logFilePath, logFileName, null, ' ', ' ', false, false);
-            fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration successfully completed - ".concat(currentDateTime), ' ', ' ', false, false);
-            regPassed = true;
-        } else {
-            System.out.println("Passwords don't match.\nRegistration FAILED." );
-            fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration FAILED - ".concat(currentDateTime), ' ', ' ', false, false);
-        }
+        boolean registrationPassed = new Account().registration(fileWorkshop, optimizer, userFilePath, userFileName, logFilePath, logFileName);
 
         //3.
-        if (regPassed) {
-            System.out.println();
-            System.out.println("Task #3. Authorisation.");
-            System.out.println("----------------------");
-            fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization started - ".concat(currentDateTime), ' ', ' ', false, false);
+        boolean authorizationPassed = new Account().activation(fileWorkshop, userFilePath, userFileName, logFilePath, logFileName);
 
-            String[] arrFromFile =  fileWorkshop.readFile(userFilePath,userFileName).split(",");
 
-            for (int i = 1; i < 10; i++){
-                System.out.println("Enter login:");
-                login = scan.readConsole();
-                System.out.println("Enter password:");
-                password = scan.readConsole();
-    //            System.out.println("try " + i);
-                if (login.equals(arrFromFile[0].strip()) && password.equals(arrFromFile[1].strip()) ){
-                    fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("%s - User: %s. Authorisation successfully completed.", currentDateTime, login), ' ', ' ', false, false);
-                    System.out.println("Authorization SUCCESSFUL.");
-                    System.out.println(String.format("Welcome %s!", login));
-                    break;
-                } else if (i < 3) {
-                    System.out.println("WRONG login or password.");
-                    System.out.println("Please, try again.");
-                }  else if (i >= 3) {
-                    System.out.println("WRONG login or password.");
-                    System.out.println("Authorization FAILED. Please, try later.");
-                    fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization FAILED - ".concat(currentDateTime), ' ', ' ', false, false);
-                    break;
-                }
-            }
-        } else {
-            System.out.println("\nPlease, register before authorization.");
-        }
-        System.out.println("======================================");
+       if (registrationPassed && authorizationPassed) {
+           System.out.println("=================");
+           System.out.println("Access is ALLOWED");
+           System.out.println("=================");
+       } else {
+           System.out.println("================");
+           System.out.println("Access is DENIED");
+           System.out.println("================");
+       }
+
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "End HOMEWORK #09 - ".concat(currentDateTime)  , '=', '=', true, false);
 
     }

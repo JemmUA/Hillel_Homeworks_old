@@ -52,7 +52,7 @@ public class FileWorkshop {
         MainFiles.fileLastOperation = append ? "append" : "rewrite";
     }
     public void writeLog(String logPath, String logName, String currDateTime, String filePath, String fileName, String fileOperation) {
-        String logData = String.format("%s. File %s: %s%s\n", currDateTime, fileOperation, filePath, fileName);
+        String logData = String.format("File %s: %s%s - %s\n", fileOperation, filePath, fileName, currDateTime);
         try (FileWriter fileWriter = new FileWriter(logPath + logName, true )) {
             fileWriter.write(logData);
         }
