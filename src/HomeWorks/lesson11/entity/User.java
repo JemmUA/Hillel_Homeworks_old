@@ -5,13 +5,16 @@ public class User {
 //    private String surName;
     private String login;
     private String password;
+    private String status; // register, authorize, work, exit
 
     public User() {
+        status = "authorize";
     }
 
-    public User(String login, String password) {
+    public User(String login, String password, String status) {
         this.login = login;
         this.password = password;
+        this.status = status;
     }
 
     public String getLogin() {
@@ -28,5 +31,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

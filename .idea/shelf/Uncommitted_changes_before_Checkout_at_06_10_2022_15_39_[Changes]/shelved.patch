@@ -1,0 +1,54 @@
+Index: src/resources/logs/log.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/resources/logs/log.txt b/src/resources/logs/log.txt
+--- a/src/resources/logs/log.txt	
++++ b/src/resources/logs/log.txt	
+@@ -17,3 +17,35 @@
+ ======================================
+ End HOMEWORK #09 - 06-10-2022 08:53:08
+ ======================================
++
++========================================
++Start HOMEWORK #09 - 06-10-2022 15:37:12
++========================================
++File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 15:37:12
++                                           
++Registration started - 06-10-2022 15:37:12
++
++File rewrite: src/resources/users/user.txt - 06-10-2022 15:37:18
++                                                         
++Registration successfully completed - 06-10-2022 15:37:18
++                                           
++Authorization started - 06-10-2022 15:37:18
++
++========================================
++Start HOMEWORK #09 - 06-10-2022 15:37:57
++========================================
++File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 15:37:57
++                                           
++Registration started - 06-10-2022 15:37:57
++
++File rewrite: src/resources/users/user.txt - 06-10-2022 15:38:05
++                                                         
++Registration successfully completed - 06-10-2022 15:38:05
++                                           
++Authorization started - 06-10-2022 15:38:05
++                                                                   
++User: 1. Authorisation successfully completed - 06-10-2022 15:38:14
++
++======================================
++End HOMEWORK #09 - 06-10-2022 15:37:57
++======================================
+Index: src/resources/users/user.txt
+===================================================================
+diff --git a/src/resources/users/user.txt b/src/resources/users/user.txt
+--- a/src/resources/users/user.txt	
++++ b/src/resources/users/user.txt	
+@@ -1,1 +1,1 @@
+-44,44
+\ No newline at end of file
++1,1
+\ No newline at end of file

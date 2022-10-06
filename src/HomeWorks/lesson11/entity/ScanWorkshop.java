@@ -1,6 +1,6 @@
 package HomeWorks.lesson11.entity;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.Scanner;
 
 public class ScanWorkshop {

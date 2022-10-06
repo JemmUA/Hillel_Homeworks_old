@@ -12,7 +12,7 @@ public class MainAccess {
     public static void main(String[] args) {
         String hwTitle =
                 "HOMEWORK 09 for lesson11\n" +
-                        "Introduction to I\\O. Work with files. The NIO package.\n" +
+                        "Introduction to I/O. Work with files. The NIO package.\n" +
                         "======================================================";
         System.out.println(hwTitle);
 
@@ -37,15 +37,44 @@ public class MainAccess {
         String logFilePath = "src/resources/logs/";
         String logFileName = "log.txt";
 
-        //check and create folders
+        //check and create folders: log, poetry, users
         fileWorkshop.checkCreatePath(logFilePath + logFileName);
         fileWorkshop.checkCreatePath(quatrainFilePath + quatrainFileName);
-//        fileWorkshop.checkCreatePath(userFilePath+userFileName);
+        fileWorkshop.checkCreatePath(userFilePath+userFileName);
 
-        //Open log session
+        //Open homework log session
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Start HOMEWORK #09 - ".concat(currentDateTime)  , '=', '=', true, false);
 
         // 1.
+        quatrain(quatrain, currentDateTime, fileWorkshop, optimizer, quatrainFilePath, quatrainFileName, logFilePath, logFileName);
+
+        //2. and 3. - mixed
+        System.out.println("Getting access of user. \n!!! For instant EXIT - type Q !!!");
+        boolean registred = false;
+        boolean authorized = false;
+
+        do {
+            if (user.getStatus() == "authorize" && !(authorized = new AccountWorkshop().authorization(user, fileWorkshop, userFilePath, userFileName, logFilePath, logFileName)));
+            if (user.getStatus() == "register" && (registred = new AccountWorkshop().registration(user, fileWorkshop, optimizer, userFilePath, userFileName, logFilePath, logFileName)));
+        } while ((!user.getStatus().equals("work")) && !(user.getStatus().equals("exit")));
+
+
+        if (user.getStatus().equals("work")) {
+            System.out.println("=================");
+            System.out.println("Access is ALLOWED");
+            System.out.println("=================");
+        }
+        if (user.getStatus().equals("exit")) {
+            System.out.println("================");
+            System.out.println("Access is DENIED");
+            System.out.println("================");
+        }
+
+        fileWorkshop.writeLogRemark(logFilePath, logFileName, "End HOMEWORK #09 - ".concat(currentDateTime)  , '=', '=', true, false);
+
+    }
+
+    private static void quatrain(String quatrain, String currentDateTime, FileWorkshop fileWorkshop, Optimizer optimizer, String quatrainFilePath, String quatrainFileName, String logFilePath, String logFileName) {
         System.out.println("Task #1. Quatrain.");
         System.out.println("----------------------");
         System.out.println("Wright file, write log");
@@ -59,31 +88,6 @@ public class MainAccess {
         } else {
             System.out.println(String.format("Writing to the file: \n\'%s%s\' \nFailed!", quatrainFilePath, quatrainFileName));
         }
-
-        //2.
-        boolean registred = false;
-        boolean authorized = false;
-
-        registred = new AccountWorkshop().registration(fileWorkshop, optimizer, userFilePath, userFileName, logFilePath, logFileName);
-
-        //3.
-        if (registred) {
-            authorized = new AccountWorkshop().authorization(fileWorkshop, userFilePath, userFileName, logFilePath, logFileName);
-        }
-
-
-        if (authorized) {
-            System.out.println("=================");
-            System.out.println("Access is ALLOWED");
-            System.out.println("=================");
-        } else {
-            System.out.println("================");
-            System.out.println("Access is DENIED");
-            System.out.println("================");
-        }
-
-        fileWorkshop.writeLogRemark(logFilePath, logFileName, "End HOMEWORK #09 - ".concat(currentDateTime)  , '=', '=', true, false);
-
     }
 }
 

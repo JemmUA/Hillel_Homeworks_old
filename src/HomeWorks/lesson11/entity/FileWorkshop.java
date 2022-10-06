@@ -1,7 +1,5 @@
 package HomeWorks.lesson11.entity;
 
-import HomeWorks.lesson11.MainFiles;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -12,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FileWorkshop {
+    public static String fileLastOperation;
     public void checkCreatePath (String path) {
         Path pathToFile = Paths.get(path);
         if (!Files.exists(pathToFile.getParent())) {
@@ -22,6 +21,11 @@ public class FileWorkshop {
 //                throw new RuntimeException(e);
             }
         }
+    }
+    public boolean checkFileExisting (String filePath, String fileName){
+        Path pathToFile = Paths.get(filePath + fileName);
+        if (!Files.exists(pathToFile)) return true;
+        return false;
     }
     public String readFile (String filePath, String fileName){
         StringBuilder fileContent = new StringBuilder();
@@ -49,7 +53,7 @@ public class FileWorkshop {
             System.err.println("Invalid file path");
             throw new RuntimeException(e);
         }
-        MainFiles.fileLastOperation = append ? "append" : "rewrite";
+        FileWorkshop.fileLastOperation = append ? "append" : "rewrite";
     }
     public void writeLog(String logPath, String logName, String currDateTime, String filePath, String fileName, String fileOperation) {
         String logData = String.format("File %s: %s%s - %s\n", fileOperation, filePath, fileName, currDateTime);
