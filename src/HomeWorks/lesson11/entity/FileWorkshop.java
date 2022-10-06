@@ -30,9 +30,23 @@ public class FileWorkshop {
             }
         }
     }
-    public boolean checkFileExisting (String filePath, String fileName){
+    public boolean checkUserExisting(String filePath, String fileName){
         Path pathToFile = Paths.get(filePath + fileName);
-        if (!Files.exists(pathToFile)) return true;
+        if (Files.exists(pathToFile)){
+            String[] arrFromFile = readFile(filePath, fileName).split(",");
+            try {
+                if (arrFromFile[0].strip().equals(fileName)) {
+//                    System.out.println("User exists");
+                    return true;
+                } else {
+//                    System.out.println("User does not exist");
+                }
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+//                System.out.println("User does not exist");
+            }
+            return true;
+        }
         return false;
     }
     public String readFile (String filePath, String fileName){

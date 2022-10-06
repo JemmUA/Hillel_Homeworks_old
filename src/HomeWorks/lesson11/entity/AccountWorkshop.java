@@ -2,10 +2,6 @@ package HomeWorks.lesson11.entity;
 
 import HomeWorks.lesson11.util.Optimizer;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class AccountWorkshop {
     public boolean registration (User user, FileWorkshop fileWorkshop, Optimizer optimizer, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
@@ -55,7 +51,7 @@ public class AccountWorkshop {
         if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         userFileName = login + ".txt";
 
-        if (fileWorkshop.checkFileExisting(userFilePath, userFileName)){
+        if (!fileWorkshop.checkUserExisting(userFilePath, userFileName)){
             System.out.println("User does not exists. Please register!");
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exists - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
 
@@ -88,26 +84,6 @@ public class AccountWorkshop {
             }
         }
         return authorizationPassed;
-    }
-    public boolean checkUserExisting(FileWorkshop fileWorkshop, String userFilePath, String userFileName) {
-        boolean userExists = true;
-        Path pathToFile = Paths.get(userFilePath + userFileName);
-        if (Files.exists(pathToFile)) {
-            String[] arrFromFile =  fileWorkshop.readFile(userFilePath, userFileName).split(",");
-            try {
-                if (arrFromFile[0].strip() != null && arrFromFile[1].strip() != null) {
-                    System.out.println("User exists");
-                    userExists = true;  // or just 'return true';
-                    return userExists;
-                } else {
-                    System.out.println("User does not exist");
-                }
-            }
-            catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("User does not exist");
-            }
-        }
-        return userExists;
     }
     public boolean checkExit(String input, User user, FileWorkshop fileWorkshop, String logFilePath, String logFileName) {
         if (input.toLowerCase().equals("q".strip())) {
