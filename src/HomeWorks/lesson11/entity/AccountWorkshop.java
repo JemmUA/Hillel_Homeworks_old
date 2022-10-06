@@ -17,22 +17,23 @@ public class AccountWorkshop {
         ScanWorkshop scan = new ScanWorkshop();
         String login = null;
         String password = null;
+        String passwordMatching = null;
         do {
             System.out.println("Please, enter new login (4-16 symbols or figures with no spaces):");
             login = scan.readConsole();
             if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
-        } while (!matchString.checkRegex(login, "w{4-16}"));
-        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+        } while (!matchString.checkRegex(login, "\\w{4,16}"));
         System.out.println("New login accepted: " + login);
         do {
             System.out.println("Please, enter new password (4-12 symbols or figures with no spaces):");
             password = scan.readConsole();
             if (checkExit(password, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
-        } while (!matchString.checkRegex(password, "w{4-16}"));
-        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
-        System.out.println("Please, repeat new password: " + "*".repeat(password.length()));
-        String passwordMatching = scan.readConsole();
-        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+        } while (!matchString.checkRegex(password, "\\w{4,12}"));
+        do {
+            System.out.println("Please, repeat new password: " + "*".repeat(password.length()));
+            passwordMatching = scan.readConsole();
+            if (checkExit(passwordMatching, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+        } while (!matchString.checkRegex(passwordMatching, "\\w{4,12}"));
         if (password.equals(passwordMatching)) {
             user.setLogin(login);
             user.setPassword(password);

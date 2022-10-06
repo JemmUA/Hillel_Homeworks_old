@@ -26,7 +26,7 @@ public class MainAccess {
         User user = new User();
 
         MatchWorkshop matchString = new MatchWorkshop();
-//        System.out.println(matchString.checkRegex("lsaasdddd22ssss", "w{4-16}"));
+
         FileWorkshop fileWorkshop = new FileWorkshop();
         Optimizer optimizer = new Optimizer();
 
