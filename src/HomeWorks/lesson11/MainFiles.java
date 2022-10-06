@@ -57,13 +57,18 @@ public class MainFiles {
         }
 
         //2.
-        boolean registrationPassed = new Account().registration(fileWorkshop, optimizer, userFilePath, userFileName, logFilePath, logFileName);
+        boolean registred = false;
+        boolean authorized = false;
+
+        registred = new Account().registration(fileWorkshop, optimizer, userFilePath, userFileName, logFilePath, logFileName);
 
         //3.
-        boolean authorizationPassed = new Account().activation(fileWorkshop, userFilePath, userFileName, logFilePath, logFileName);
+        if (registred) {
+            authorized = new Account().activation(fileWorkshop, userFilePath, userFileName, logFilePath, logFileName);
+        }
 
 
-       if (registrationPassed && authorizationPassed) {
+       if (authorized) {
            System.out.println("=================");
            System.out.println("Access is ALLOWED");
            System.out.println("=================");

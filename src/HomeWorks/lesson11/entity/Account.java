@@ -2,6 +2,10 @@ package HomeWorks.lesson11.entity;
 
 import HomeWorks.lesson11.util.Optimizer;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Account {
     public boolean registration (FileWorkshop fileWorkshop, Optimizer optimizer, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
@@ -9,6 +13,25 @@ public class Account {
         System.out.println("----------------------");
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration started - ".concat(TimeWorkshop.getCurrentDateTime()).concat("\n"), ' ', ' ', false, false);
         boolean registrationPassed = false;
+
+        //Detect existing user // Turned off for further test authorization anyway
+//        Path pathToFile = Paths.get(userFilePath + userFileName);
+//        if (Files.exists(pathToFile)) {
+//            String[] arrFromFile =  fileWorkshop.readFile(userFilePath, userFileName).split(",");
+//            try {
+//                if (arrFromFile[0].strip() != null && arrFromFile[1].strip() != null) {
+//                    System.out.println("User already exists");
+//                    registrationPassed = true;  // or just 'return true';
+//                    return registrationPassed;
+//                } else {
+//                System.out.println("User does not exist");
+//                }
+//            }
+//            catch (ArrayIndexOutOfBoundsException e) {
+//                System.out.println("User does not exists");
+//            }
+//        }
+
         ScanWorkshop scan = new ScanWorkshop();
 
         System.out.println("Please, enter new login:");
@@ -40,7 +63,7 @@ public class Account {
 
         String[] arrFromFile =  fileWorkshop.readFile(userFilePath, userFileName).split(",");
 
-        for (int i = 1; i < 10; i++){
+        for (int i = 1; i < 10; i++){ // tries limited by conditions below
             System.out.println("Enter login:");
             String login = scan.readConsole();
             System.out.println("Enter password:");
