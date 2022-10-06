@@ -2,6 +2,10 @@ package HomeWorks.lesson11.entity;
 
 import HomeWorks.lesson11.util.Optimizer;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class AccountWorkshop {
     public boolean registration (User user, FileWorkshop fileWorkshop, Optimizer optimizer, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
@@ -51,7 +55,7 @@ public class AccountWorkshop {
         if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         userFileName = login + ".txt";
 
-        if (!fileWorkshop.checkUserExisting(userFilePath, userFileName)){
+        if (!checkUserExisting(fileWorkshop, userFilePath, userFileName)){
             System.out.println("User does not exists. Please register!");
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exists - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
 
@@ -84,6 +88,25 @@ public class AccountWorkshop {
             }
         }
         return authorizationPassed;
+    }
+    public boolean checkUserExisting(FileWorkshop fileWorkshop, String filePath, String fileName){
+        Path pathToFile = Paths.get(filePath + fileName);
+        if (Files.exists(pathToFile)){
+            String[] arrFromFile = fileWorkshop.readFile(filePath, fileName).split(",");
+            try {
+                if (arrFromFile[0].strip().equals(fileName)) {
+//                    System.out.println("User exists");
+                    return true;
+                } else {
+//                    System.out.println("User does not exist");
+                }
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+//                System.out.println("User does not exist");
+            }
+            return true;
+        }
+        return false;
     }
     public boolean checkExit(String input, User user, FileWorkshop fileWorkshop, String logFilePath, String logFileName) {
         if (input.toLowerCase().equals("q".strip())) {
