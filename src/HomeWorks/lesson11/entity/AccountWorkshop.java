@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class AccountWorkshop {
-    public boolean registration (User user, FileWorkshop fileWorkshop, Optimizer optimizer, String userFilePath, String userFileName, String logFilePath, String logFileName) {
+    public boolean registration (User user, FileWorkshop fileWorkshop, MatchWorkshop matchString, Optimizer optimizer, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
         System.out.println("REGISTRATION");
         System.out.println("----------------------");
@@ -15,13 +15,20 @@ public class AccountWorkshop {
         boolean registrationPassed = false;
 
         ScanWorkshop scan = new ScanWorkshop();
-
-        System.out.println("Please, enter new login:");
-        String login = scan.readConsole();
+        String login = null;
+        String password = null;
+        do {
+            System.out.println("Please, enter new login (4-16 symbols or figures with no spaces):");
+            login = scan.readConsole();
+            if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+        } while (!matchString.checkRegex(login, "w{4-16}"));
         if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         System.out.println("New login accepted: " + login);
-        System.out.println("Please, enter new password:");
-        String password = scan.readConsole();
+        do {
+            System.out.println("Please, enter new password (4-12 symbols or figures with no spaces):");
+            password = scan.readConsole();
+            if (checkExit(password, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+        } while (!matchString.checkRegex(password, "w{4-16}"));
         if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         System.out.println("Please, repeat new password: " + "*".repeat(password.length()));
         String passwordMatching = scan.readConsole();

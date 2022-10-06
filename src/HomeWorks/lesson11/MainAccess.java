@@ -1,14 +1,15 @@
 package HomeWorks.lesson11;
 
-import HomeWorks.lesson11.entity.AccountWorkshop;
-import HomeWorks.lesson11.entity.FileWorkshop;
-import HomeWorks.lesson11.entity.TimeWorkshop;
-import HomeWorks.lesson11.entity.User;
+import HomeWorks.lesson11.entity.*;
 import HomeWorks.lesson11.util.Optimizer;
 
 public class MainAccess {
 
     public static void main(String[] args) {
+
+
+
+
         String hwTitle =
                 "HOMEWORK 09 for lesson11\n" +
                         "Introduction to I/O. Work with files. The NIO package.\n" +
@@ -24,6 +25,8 @@ public class MainAccess {
 
         User user = new User();
 
+        MatchWorkshop matchString = new MatchWorkshop();
+//        System.out.println(matchString.checkRegex("lsaasdddd22ssss", "w{4-16}"));
         FileWorkshop fileWorkshop = new FileWorkshop();
         Optimizer optimizer = new Optimizer();
 
@@ -54,7 +57,7 @@ public class MainAccess {
 
         do {
             if (user.getStatus() == "authorize" && !(authorized = new AccountWorkshop().authorization(user, fileWorkshop, userFilePath, userFileName, logFilePath, logFileName)));
-            if (user.getStatus() == "register" && (registred = new AccountWorkshop().registration(user, fileWorkshop, optimizer, userFilePath, userFileName, logFilePath, logFileName)));
+            if (user.getStatus() == "register" && (registred = new AccountWorkshop().registration(user, fileWorkshop, matchString, optimizer, userFilePath, userFileName, logFilePath, logFileName)));
         } while ((!user.getStatus().equals("work")) && !(user.getStatus().equals("exit")));
 
 

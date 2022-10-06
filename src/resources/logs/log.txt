@@ -253,3 +253,31 @@ User does not exists - 06-10-2022 22:40:06
                                            
 Registration started - 06-10-2022 22:40:06
 
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:40:42
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:40:42
+                                           
+Authorization started - 06-10-2022 22:40:42
+                                          
+User does not exists - 06-10-2022 22:40:46
+                                           
+Registration started - 06-10-2022 22:40:46
+
+                                         
+Registration FAILED - 06-10-2022 22:41:12
+                                           
+Registration started - 06-10-2022 22:41:12
+
+File rewrite: src/resources/users/ssss.txt - 06-10-2022 22:42:12
+                                                         
+Registration successfully completed - 06-10-2022 22:42:12
+                                           
+Authorization started - 06-10-2022 22:42:12
+                                                                      
+User: ssss. Authorisation successfully completed - 06-10-2022 22:42:15
+
+======================================
+End HOMEWORK #09 - 06-10-2022 22:40:42
+======================================

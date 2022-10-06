@@ -1,36 +1,255 @@
 
 ========================================
-Start HOMEWORK #09 - 06-10-2022 21:35:43
+Start HOMEWORK #09 - 06-10-2022 21:42:21
 ========================================
-File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 21:35:43
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 21:42:21
                                            
-Authorization started - 06-10-2022 21:35:43
+Authorization started - 06-10-2022 21:42:21
                                           
-User does not exists - 06-10-2022 21:35:48
+User does not exists - 06-10-2022 21:42:24
                                            
-Registration started - 06-10-2022 21:35:48
+Registration started - 06-10-2022 21:42:24
 
-File rewrite: src/resources/users/1.txt - 06-10-2022 21:35:50
+File rewrite: src/resources/users/ddd.txt - 06-10-2022 21:42:35
                                                          
-Registration successfully completed - 06-10-2022 21:35:50
+Registration successfully completed - 06-10-2022 21:42:35
                                            
-Authorization started - 06-10-2022 21:35:50
-                                                                   
-User: 1. Authorisation successfully completed - 06-10-2022 21:35:51
+Authorization started - 06-10-2022 21:42:35
+                                                                     
+User: ddd. Authorisation successfully completed - 06-10-2022 21:42:38
 
 ======================================
-End HOMEWORK #09 - 06-10-2022 21:35:43
+End HOMEWORK #09 - 06-10-2022 21:42:21
 ======================================
 
 ========================================
-Start HOMEWORK #09 - 06-10-2022 21:35:55
+Start HOMEWORK #09 - 06-10-2022 21:43:42
 ========================================
-File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 21:35:55
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 21:43:42
                                            
-Authorization started - 06-10-2022 21:35:55
-                                                                   
-User: 1. Authorisation successfully completed - 06-10-2022 21:35:58
+Authorization started - 06-10-2022 21:43:42
+                                         
+Emergency exit by Q - 06-10-2022 21:43:47
 
 ======================================
-End HOMEWORK #09 - 06-10-2022 21:35:55
+End HOMEWORK #09 - 06-10-2022 21:43:42
 ======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 21:44:08
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 21:44:08
+                                           
+Authorization started - 06-10-2022 21:44:08
+                                          
+User does not exists - 06-10-2022 21:44:13
+                                           
+Registration started - 06-10-2022 21:44:13
+
+                                         
+Emergency exit by Q - 06-10-2022 21:44:14
+
+======================================
+End HOMEWORK #09 - 06-10-2022 21:44:08
+======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 21:50:08
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 21:50:08
+                                           
+Authorization started - 06-10-2022 21:50:08
+                                          
+User does not exists - 06-10-2022 21:50:26
+                                           
+Registration started - 06-10-2022 21:50:26
+
+                                         
+Registration FAILED - 06-10-2022 21:50:38
+                                           
+Registration started - 06-10-2022 21:50:38
+
+File rewrite: src/resources/users/sasa.txt - 06-10-2022 21:50:52
+                                                         
+Registration successfully completed - 06-10-2022 21:50:52
+                                           
+Authorization started - 06-10-2022 21:50:52
+                                    
+WRONG password - 06-10-2022 21:51:09
+                                                                      
+User: sasa. Authorisation successfully completed - 06-10-2022 21:51:13
+
+======================================
+End HOMEWORK #09 - 06-10-2022 21:50:08
+======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:04:13
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:04:13
+                                           
+Authorization started - 06-10-2022 22:04:13
+                                          
+User does not exists - 06-10-2022 22:04:18
+                                           
+Registration started - 06-10-2022 22:04:18
+
+File rewrite: src/resources/users/.txt - 06-10-2022 22:04:24
+                                                         
+Registration successfully completed - 06-10-2022 22:04:24
+                                           
+Authorization started - 06-10-2022 22:04:24
+                                                                  
+User: . Authorisation successfully completed - 06-10-2022 22:04:31
+
+======================================
+End HOMEWORK #09 - 06-10-2022 22:04:13
+======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:20:47
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:20:47
+                                           
+Authorization started - 06-10-2022 22:20:47
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:21:24
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:21:24
+                                           
+Authorization started - 06-10-2022 22:21:24
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:22:23
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:22:23
+                                           
+Authorization started - 06-10-2022 22:22:23
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:22:34
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:22:34
+                                           
+Authorization started - 06-10-2022 22:22:34
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:22:41
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:22:41
+                                           
+Authorization started - 06-10-2022 22:22:41
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:22:55
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:22:55
+                                           
+Authorization started - 06-10-2022 22:22:55
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:23:01
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:23:01
+                                           
+Authorization started - 06-10-2022 22:23:01
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:23:10
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:23:10
+                                           
+Authorization started - 06-10-2022 22:23:10
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:23:15
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:23:15
+                                           
+Authorization started - 06-10-2022 22:23:15
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:23:22
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:23:22
+                                           
+Authorization started - 06-10-2022 22:23:22
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:34:39
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:34:39
+                                           
+Authorization started - 06-10-2022 22:34:39
+                                          
+User does not exists - 06-10-2022 22:34:43
+                                           
+Registration started - 06-10-2022 22:34:43
+
+File rewrite: src/resources/users/f.txt - 06-10-2022 22:34:56
+                                                         
+Registration successfully completed - 06-10-2022 22:34:56
+                                           
+Authorization started - 06-10-2022 22:34:56
+                                                                   
+User: f. Authorisation successfully completed - 06-10-2022 22:34:57
+
+======================================
+End HOMEWORK #09 - 06-10-2022 22:34:39
+======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:35:43
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:35:43
+                                           
+Authorization started - 06-10-2022 22:35:43
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:36:08
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:36:08
+                                           
+Authorization started - 06-10-2022 22:36:08
+                                          
+User does not exists - 06-10-2022 22:36:11
+                                           
+Registration started - 06-10-2022 22:36:11
+
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:37:06
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:37:06
+                                           
+Authorization started - 06-10-2022 22:37:06
+                                          
+User does not exists - 06-10-2022 22:37:08
+                                           
+Registration started - 06-10-2022 22:37:08
+
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:39:21
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:39:21
+                                           
+Authorization started - 06-10-2022 22:39:21
+                                          
+User does not exists - 06-10-2022 22:39:23
+                                           
+Registration started - 06-10-2022 22:39:23
+
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 22:40:02
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 22:40:02
+                                           
+Authorization started - 06-10-2022 22:40:02
+                                          
+User does not exists - 06-10-2022 22:40:06
+                                           
+Registration started - 06-10-2022 22:40:06
+
