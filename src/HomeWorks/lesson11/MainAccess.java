@@ -8,7 +8,6 @@ import HomeWorks.lesson11.util.Optimizer;
 
 public class MainAccess {
 
-    public static String fileLastOperation;
     public static void main(String[] args) {
         String hwTitle =
                 "HOMEWORK 09 for lesson11\n" +

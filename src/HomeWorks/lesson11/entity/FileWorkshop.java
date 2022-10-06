@@ -10,7 +10,15 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FileWorkshop {
-    public static String fileLastOperation;
+    static String fileLastOperation;
+
+    public static String getFileLastOperation() {
+        return fileLastOperation;
+    }
+
+    public static void setFileLastOperation(String fileLastOper) {
+        fileLastOperation = fileLastOper;
+    }
     public void checkCreatePath (String path) {
         Path pathToFile = Paths.get(path);
         if (!Files.exists(pathToFile.getParent())) {
@@ -53,7 +61,7 @@ public class FileWorkshop {
             System.err.println("Invalid file path");
             throw new RuntimeException(e);
         }
-        FileWorkshop.fileLastOperation = append ? "append" : "rewrite";
+        fileLastOperation = append ? "append" : "rewrite";
     }
     public void writeLog(String logPath, String logName, String currDateTime, String filePath, String fileName, String fileOperation) {
         String logData = String.format("File %s: %s%s - %s\n", fileOperation, filePath, fileName, currDateTime);
