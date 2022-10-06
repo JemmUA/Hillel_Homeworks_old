@@ -1,0 +1,26 @@
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 19:37:10
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 19:37:10
+                                           
+Authorization started - 06-10-2022 19:37:10
+                                           
+Registration started - 06-10-2022 19:37:13
+
+                                         
+Registration FAILED - 06-10-2022 19:37:15
+                                           
+Registration started - 06-10-2022 19:37:15
+
+File rewrite: src/resources/users/ddd.txt - 06-10-2022 19:37:19
+                                                         
+Registration successfully completed - 06-10-2022 19:37:19
+                                           
+Authorization started - 06-10-2022 19:37:19
+                                                                     
+User: ddd. Authorisation successfully completed - 06-10-2022 19:37:21
+
+======================================
+End HOMEWORK #09 - 06-10-2022 19:37:10
+======================================
