@@ -1,11 +1,141 @@
 
 ========================================
-Start HOMEWORK #09 - 06-10-2022 19:55:36
+Start HOMEWORK #09 - 06-10-2022 20:01:07
 ========================================
-File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 19:55:36
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:01:07
                                            
-Authorization started - 06-10-2022 19:55:36
+Authorization started - 06-10-2022 20:01:07
+                                           
+Registration started - 06-10-2022 20:08:18
+
+File rewrite: src/resources/users/sa.txt - 06-10-2022 20:08:20
+                                                         
+Registration successfully completed - 06-10-2022 20:08:20
+                                           
+Authorization started - 06-10-2022 20:08:20
+                                                                    
+User: sa. Authorisation successfully completed - 06-10-2022 20:08:21
 
 ======================================
-End HOMEWORK #09 - 06-10-2022 19:55:36
+End HOMEWORK #09 - 06-10-2022 20:01:07
+======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:08:25
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:08:25
+                                           
+Authorization started - 06-10-2022 20:08:25
+                                           
+Registration started - 06-10-2022 20:08:25
+
+File rewrite: src/resources/users/ds.txt - 06-10-2022 20:08:35
+                                                         
+Registration successfully completed - 06-10-2022 20:08:35
+                                           
+Authorization started - 06-10-2022 20:08:35
+                                          
+Authorization FAILED - 06-10-2022 20:08:48
+
+======================================
+End HOMEWORK #09 - 06-10-2022 20:08:25
+======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:13:04
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:13:04
+                                           
+Authorization started - 06-10-2022 20:13:04
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:13:53
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:13:53
+                                           
+Authorization started - 06-10-2022 20:13:54
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:14:15
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:14:15
+                                           
+Authorization started - 06-10-2022 20:14:15
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:14:32
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:14:32
+                                           
+Authorization started - 06-10-2022 20:14:32
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:15:14
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:15:14
+                                           
+Authorization started - 06-10-2022 20:15:14
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:15:27
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:15:27
+                                           
+Authorization started - 06-10-2022 20:15:27
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:15:54
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:15:54
+                                           
+Authorization started - 06-10-2022 20:15:54
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:16:16
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:16:16
+                                           
+Authorization started - 06-10-2022 20:16:16
+                                           
+Registration started - 06-10-2022 20:16:50
+
+File rewrite: src/resources/users/sdfsdf.txt - 06-10-2022 20:16:54
+                                                         
+Registration successfully completed - 06-10-2022 20:16:54
+                                           
+Authorization started - 06-10-2022 20:16:54
+                                           
+Registration started - 06-10-2022 20:16:57
+
+File rewrite: src/resources/users/ff.txt - 06-10-2022 20:17:02
+                                                         
+Registration successfully completed - 06-10-2022 20:17:02
+                                           
+Authorization started - 06-10-2022 20:17:02
+                                           
+Registration started - 06-10-2022 20:17:05
+
+File rewrite: src/resources/users/ff.txt - 06-10-2022 20:17:12
+                                                         
+Registration successfully completed - 06-10-2022 20:17:12
+                                           
+Authorization started - 06-10-2022 20:17:12
+                                                                    
+User: ff. Authorisation successfully completed - 06-10-2022 20:17:14
+
+======================================
+End HOMEWORK #09 - 06-10-2022 20:16:16
+======================================
+
+========================================
+Start HOMEWORK #09 - 06-10-2022 20:28:56
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 06-10-2022 20:28:56
+                                           
+Authorization started - 06-10-2022 20:28:56
+                                         
+Emergency exit by Q - 06-10-2022 20:28:59
+
+======================================
+End HOMEWORK #09 - 06-10-2022 20:28:56
 ======================================

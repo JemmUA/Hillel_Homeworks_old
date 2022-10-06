@@ -18,14 +18,14 @@ public class AccountWorkshop {
 
         System.out.println("Please, enter new login:");
         String login = scan.readConsole();
-        if (checkExit(login, user)) return false; // exit
+        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         System.out.println("New login accepted: " + login);
         System.out.println("Please, enter new password:");
         String password = scan.readConsole();
-        if (checkExit(password, user)) return false; // exit
+        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         System.out.println("Please, repeat new password: " + "*".repeat(password.length()));
         String passwordMatching = scan.readConsole();
-        if (checkExit(passwordMatching, user)) return false; // exit
+        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         if (password.equals(passwordMatching)) {
             user.setLogin(login);
             user.setPassword(password);
@@ -52,18 +52,20 @@ public class AccountWorkshop {
 
         System.out.println("Enter login:");
         String login = scan.readConsole();
-        if (checkExit(login, user)) return false; // exit
+        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
         userFileName = login + ".txt";
 
         if (fileWorkshop.checkFileExisting(userFilePath, userFileName)){
             System.out.println("User does not exists. Please register!");
+            fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exists - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
+
             user.setStatus("register"); // if user file does not exist - do registration
             return authorizationPassed;
         }
         for (int i = 1; i < 10; i++){ // tries limited by conditions below
             System.out.println("Enter password:");
             String password = scan.readConsole();
-            if (checkExit(password, user)) return false; // exit
+            if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
             String[] arrFromFile =  fileWorkshop.readFile(userFilePath, userFileName).split(",");
             //            System.out.println("try " + i);
             if (login.equals(arrFromFile[0].strip()) && password.equals(arrFromFile[1].strip()) ){
@@ -74,12 +76,13 @@ public class AccountWorkshop {
                 authorizationPassed = true;
                 break;
             } else if (i < 3) {
-                System.out.println("WRONG login or password.");
+                System.out.println("WRONG password");
+                fileWorkshop.writeLogRemark(logFilePath, logFileName, "WRONG password - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
                 System.out.println("Please, try again.");
             }  else if (i >= 3) {
-                System.out.println("WRONG login or password.");
+                System.out.println("WRONG password");
                 System.out.println("Authorization FAILED\nPlease, try later.");
-                fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization FAILED - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
+                fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization FAILED - Exit ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
                 user.setStatus("exit"); // to exit
                 break;
             }
@@ -106,9 +109,10 @@ public class AccountWorkshop {
         }
         return userExists;
     }
-    public boolean checkExit(String input, User user) {
+    public boolean checkExit(String input, User user, FileWorkshop fileWorkshop, String logFilePath, String logFileName) {
         if (input.toLowerCase().equals("q".strip())) {
             user.setStatus("exit"); // to exit
+            fileWorkshop.writeLogRemark(logFilePath, logFileName, "Emergency exit by Q - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
             return true;
         }
         return false;

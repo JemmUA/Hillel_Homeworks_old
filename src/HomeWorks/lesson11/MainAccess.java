@@ -48,7 +48,7 @@ public class MainAccess {
         quatrain(quatrain, currentDateTime, fileWorkshop, optimizer, quatrainFilePath, quatrainFileName, logFilePath, logFileName);
 
         //2. and 3. - mixed
-        System.out.println("Getting access of user. \n!!! For instant EXIT - type Q !!!");
+        System.out.println("\n------- GETTING ACCESS ------\n! For instant EXIT - type Q !");
         boolean registred = false;
         boolean authorized = false;
 
