@@ -41,7 +41,7 @@ public class AccountWorkshop {
             System.out.println("New password accepted: " + password);
             System.out.println("Registration SUCCESSFUL" );
             optimizer.writeAndLog(login.concat(",").concat(password), userFilePath, login + ".txt", false, fileWorkshop, TimeWorkshop.getCurrentDateTime(), logFilePath, logFileName, null, ' ', ' ', false, false);
-            fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration successfully completed - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
+            fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("User: %s. Registration successfully completed - %s", login, TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
             registrationPassed = true;
             user.setStatus("authorize");
         } else {
