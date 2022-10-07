@@ -58,4 +58,9 @@ public class User {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public void setStatusAuthorize() { status = "authorize"; }
+    public void setStatusRegister() { status = "register"; }
+    public void setStatusWork() { status = "work"; }
+    public void setStatusExit() { status = "exit"; }
 }

@@ -21,7 +21,16 @@ public class AccountWorkshop {
             System.out.println(String.format("Please, enter new login (%s):", matchString.getLoginRegexDescription()));
             login = scan.readConsole();
             if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return; // exit
+            userFileName = login + ".txt";
         } while (!matchString.checkRegex(login, matchString.getLoginRegex()));
+
+        if (checkUserExisting(fileWorkshop, userFilePath, userFileName)){
+            System.out.println("User already exists. Please authorise!");
+            fileWorkshop.writeLogRemark(logFilePath, logFileName, "User already exists - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
+            user.setStatusAuthorize(); // if user file does not exist - do authorization
+            return;
+        }
+
         System.out.println("New login accepted: " + login);
         do {
             System.out.println(String.format("Please, enter new password (%s):", matchString.getPasswordRegexDescription()));
@@ -40,16 +49,16 @@ public class AccountWorkshop {
             System.out.println("Registration SUCCESSFUL" );
             fileWorkshop.writeAndLog(login.concat(",").concat(password), userFilePath, login + ".txt", false, fileWorkshop, TimeWorkshop.getCurrentDateTime(), logFilePath, logFileName, null, ' ', ' ', false, false);
             fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("User: %s. Registration successfully completed - %s", login, TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
-            user.setStatus("authorize");
+            user.setStatusAuthorize();
         } else {
             System.out.println("Passwords don't match each other.\nRegistration FAILED." );
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration FAILED - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
-            user.setStatus("register");
+            user.setStatusRegister();
         }
     }
     public void authorization (User user, FileWorkshop fileWorkshop, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
-        System.out.println("AUTHORISATION");
+        System.out.println("AUTHORIZATION");
         System.out.println("----------------------");
         ScanWorkshop scan = new ScanWorkshop();
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization started - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
@@ -63,7 +72,7 @@ public class AccountWorkshop {
             System.out.println("User does not exist. Please register!");
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exist - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
 
-            user.setStatus("register"); // if user file does not exist - do registration
+            user.setStatusRegister(); // if user file does not exist - do registration
             return;
         }
         for (int i = 1; i < 10; i++){ // tries limited by conditions below
@@ -73,10 +82,10 @@ public class AccountWorkshop {
             String[] arrFromFile =  fileWorkshop.readFile(userFilePath, userFileName).split(",");
             //            System.out.println("try " + i);
             if (login.equals(arrFromFile[0].strip()) && password.equals(arrFromFile[1].strip()) ){
-                fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("User: %s. Authorisation successfully completed - %s", login, TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
+                fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("User: %s. Authorization successfully completed - %s", login, TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
                 System.out.println("Authorization SUCCESSFUL");
                 System.out.println(String.format("%s, welcome!", login));
-                user.setStatus("work"); // to work
+                user.setStatusWork(); // to work
                 break;
             } else if (i < 3) {
                 System.out.println("WRONG password");
@@ -86,7 +95,7 @@ public class AccountWorkshop {
                 System.out.println("WRONG password");
                 System.out.println("Authorization FAILED\nPlease, try later.");
                 fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization FAILED - Exit ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
-                user.setStatus("exit"); // to exit
+                user.setStatusExit(); // to exit
                 break;
             }
         }
@@ -112,7 +121,7 @@ public class AccountWorkshop {
     }
     public boolean checkExit(String input, User user, FileWorkshop fileWorkshop, String logFilePath, String logFileName) {
         if (input.toLowerCase().equals("q".strip())) {
-            user.setStatus("exit"); // to exit
+            user.setStatusExit(); // to exit
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "Emergency exit by Q - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
             return true;
         }
