@@ -56,8 +56,8 @@ public class MainAccess {
         boolean authorized = false;
 
         do {
-            if (user.getStatus() == "authorize" && !(authorized = new AccountWorkshop().authorization(user, fileWorkshop, userFilePath, userFileName, logFilePath, logFileName)));
-            if (user.getStatus() == "register" && (registred = new AccountWorkshop().registration(user, fileWorkshop, matchString, optimizer, userFilePath, userFileName, logFilePath, logFileName)));
+            if (user.getStatus().equals("authorize") && !(authorized = new AccountWorkshop().authorization(user, fileWorkshop, userFilePath, userFileName, logFilePath, logFileName)));
+            if (user.getStatus().equals("register") && (registred = new AccountWorkshop().registration(user, fileWorkshop, matchString, optimizer, userFilePath, userFileName, logFilePath, logFileName)));
         } while ((!user.getStatus().equals("work")) && !(user.getStatus().equals("exit")));
 
 
