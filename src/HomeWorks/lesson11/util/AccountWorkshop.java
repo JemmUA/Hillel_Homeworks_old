@@ -7,12 +7,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class AccountWorkshop {
-    public boolean registration (User user, FileWorkshop fileWorkshop, MatchWorkshop matchString, String userFilePath, String userFileName, String logFilePath, String logFileName) {
+    public void registration (User user, FileWorkshop fileWorkshop, MatchWorkshop matchString, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
         System.out.println("REGISTRATION");
         System.out.println("----------------------");
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration started - ".concat(TimeWorkshop.getCurrentDateTime()).concat("\n"), ' ', ' ', false, false);
-        boolean registrationPassed = false;
 
         ScanWorkshop scan = new ScanWorkshop();
         String login = null;
@@ -21,18 +20,18 @@ public class AccountWorkshop {
         do {
             System.out.println(String.format("Please, enter new login (%s):", matchString.getLoginRegexDescription()));
             login = scan.readConsole();
-            if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+            if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return; // exit
         } while (!matchString.checkRegex(login, matchString.getLoginRegex()));
         System.out.println("New login accepted: " + login);
         do {
             System.out.println(String.format("Please, enter new password (%s):", matchString.getPasswordRegexDescription()));
             password = scan.readConsole();
-            if (checkExit(password, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+            if (checkExit(password, user, fileWorkshop, logFilePath, logFileName)) return; // exit
         } while (!matchString.checkRegex(password, matchString.getPasswordRegex()));
         do {
             System.out.println("Please, repeat new password: " + "*".repeat(password.length()));
             passwordMatching = scan.readConsole();
-            if (checkExit(passwordMatching, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+            if (checkExit(passwordMatching, user, fileWorkshop, logFilePath, logFileName)) return; // exit
         } while (!matchString.checkRegex(passwordMatching, matchString.getPasswordRegex()));
         if (password.equals(passwordMatching)) {
             user.setLogin(login);
@@ -41,39 +40,36 @@ public class AccountWorkshop {
             System.out.println("Registration SUCCESSFUL" );
             fileWorkshop.writeAndLog(login.concat(",").concat(password), userFilePath, login + ".txt", false, fileWorkshop, TimeWorkshop.getCurrentDateTime(), logFilePath, logFileName, null, ' ', ' ', false, false);
             fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("User: %s. Registration successfully completed - %s", login, TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
-            registrationPassed = true;
             user.setStatus("authorize");
         } else {
             System.out.println("Passwords don't match each other.\nRegistration FAILED." );
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "Registration FAILED - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
             user.setStatus("register");
         }
-        return registrationPassed;
     }
-    public boolean authorization (User user, FileWorkshop fileWorkshop, String userFilePath, String userFileName, String logFilePath, String logFileName) {
+    public void authorization (User user, FileWorkshop fileWorkshop, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
         System.out.println("AUTHORISATION");
         System.out.println("----------------------");
-        boolean authorizationPassed = false;
         ScanWorkshop scan = new ScanWorkshop();
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization started - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
 
         System.out.println("Enter login:");
         String login = scan.readConsole();
-        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+        if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return; // exit
         userFileName = login + ".txt";
 
         if (!checkUserExisting(fileWorkshop, userFilePath, userFileName)){
-            System.out.println("User does not exists. Please register!");
+            System.out.println("User does not exist. Please register!");
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exist - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
 
             user.setStatus("register"); // if user file does not exist - do registration
-            return authorizationPassed;
+            return;
         }
         for (int i = 1; i < 10; i++){ // tries limited by conditions below
             System.out.println("Enter password:");
             String password = scan.readConsole();
-            if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
+            if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return; // exit
             String[] arrFromFile =  fileWorkshop.readFile(userFilePath, userFileName).split(",");
             //            System.out.println("try " + i);
             if (login.equals(arrFromFile[0].strip()) && password.equals(arrFromFile[1].strip()) ){
@@ -81,7 +77,6 @@ public class AccountWorkshop {
                 System.out.println("Authorization SUCCESSFUL");
                 System.out.println(String.format("%s, welcome!", login));
                 user.setStatus("work"); // to work
-                authorizationPassed = true;
                 break;
             } else if (i < 3) {
                 System.out.println("WRONG password");
@@ -95,7 +90,6 @@ public class AccountWorkshop {
                 break;
             }
         }
-        return authorizationPassed;
     }
     public boolean checkUserExisting(FileWorkshop fileWorkshop, String filePath, String fileName){
         Path pathToFile = Paths.get(filePath + fileName);
