@@ -1,13 +1,13 @@
-package HomeWorks.lesson11.entity;
+package HomeWorks.lesson11.util;
 
-import HomeWorks.lesson11.util.Optimizer;
+import HomeWorks.lesson11.entity.User;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class AccountWorkshop {
-    public boolean registration (User user, FileWorkshop fileWorkshop, MatchWorkshop matchString, Optimizer optimizer, String userFilePath, String userFileName, String logFilePath, String logFileName) {
+    public boolean registration (User user, FileWorkshop fileWorkshop, MatchWorkshop matchString, String userFilePath, String userFileName, String logFilePath, String logFileName) {
         System.out.println();
         System.out.println("REGISTRATION");
         System.out.println("----------------------");
@@ -19,7 +19,6 @@ public class AccountWorkshop {
         String password = null;
         String passwordMatching = null;
         do {
-//            System.out.println(String.format("Please, enter new login (4-16 symbols or figures with no spaces):", ));
             System.out.println(String.format("Please, enter new login (%s):", matchString.getLoginRegexDescription()));
             login = scan.readConsole();
             if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return false; // exit
@@ -40,7 +39,7 @@ public class AccountWorkshop {
             user.setPassword(password);
             System.out.println("New password accepted: " + password);
             System.out.println("Registration SUCCESSFUL" );
-            optimizer.writeAndLog(login.concat(",").concat(password), userFilePath, login + ".txt", false, fileWorkshop, TimeWorkshop.getCurrentDateTime(), logFilePath, logFileName, null, ' ', ' ', false, false);
+            fileWorkshop.writeAndLog(login.concat(",").concat(password), userFilePath, login + ".txt", false, fileWorkshop, TimeWorkshop.getCurrentDateTime(), logFilePath, logFileName, null, ' ', ' ', false, false);
             fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("User: %s. Registration successfully completed - %s", login, TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
             registrationPassed = true;
             user.setStatus("authorize");

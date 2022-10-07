@@ -1,4 +1,4 @@
-package HomeWorks.lesson11.entity;
+package HomeWorks.lesson11.util;
 
 //import java.io.IOException;
 import java.util.Scanner;

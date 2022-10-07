@@ -1,7 +1,7 @@
 package HomeWorks.lesson11;
 
 import HomeWorks.lesson11.entity.*;
-import HomeWorks.lesson11.util.Optimizer;
+import HomeWorks.lesson11.util.*;
 
 public class MainAccess {
 
@@ -28,7 +28,6 @@ public class MainAccess {
         MatchWorkshop matchString = new MatchWorkshop();
 
         FileWorkshop fileWorkshop = new FileWorkshop();
-        Optimizer optimizer = new Optimizer();
 
         String quatrainFilePath = "src/resources/poetry/";
         String quatrainFileName = "quatrain.txt";
@@ -48,7 +47,7 @@ public class MainAccess {
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Start HOMEWORK #09 - ".concat(currentDateTime)  , '=', '=', true, false);
 
         // 1.
-        quatrain(quatrain, currentDateTime, fileWorkshop, optimizer, quatrainFilePath, quatrainFileName, logFilePath, logFileName);
+        quatrain(quatrain, currentDateTime, fileWorkshop, quatrainFilePath, quatrainFileName, logFilePath, logFileName);
 
         //2. and 3. - mixed
         System.out.println("\n------- GETTING ACCESS ------\n! For instant EXIT - type Q !");
@@ -57,7 +56,7 @@ public class MainAccess {
 
         do {
             if (user.getStatus().equals("authorize") && !(authorized = new AccountWorkshop().authorization(user, fileWorkshop, userFilePath, userFileName, logFilePath, logFileName)));
-            if (user.getStatus().equals("register") && (registred = new AccountWorkshop().registration(user, fileWorkshop, matchString, optimizer, userFilePath, userFileName, logFilePath, logFileName)));
+            if (user.getStatus().equals("register") && (registred = new AccountWorkshop().registration(user, fileWorkshop, matchString, userFilePath, userFileName, logFilePath, logFileName)));
         } while ((!user.getStatus().equals("work")) && !(user.getStatus().equals("exit")));
 
 
@@ -76,11 +75,11 @@ public class MainAccess {
 
     }
 
-    private static void quatrain(String quatrain, String currentDateTime, FileWorkshop fileWorkshop, Optimizer optimizer, String quatrainFilePath, String quatrainFileName, String logFilePath, String logFileName) {
+    private static void quatrain(String quatrain, String currentDateTime, FileWorkshop fileWorkshop, String quatrainFilePath, String quatrainFileName, String logFilePath, String logFileName) {
         System.out.println("Task #1. Quatrain.");
         System.out.println("----------------------");
         System.out.println("Wright file, write log");
-        optimizer.writeAndLog(quatrain, quatrainFilePath, quatrainFileName, false, fileWorkshop, currentDateTime, logFilePath, logFileName, null, ' ', ' ', false, false);
+        fileWorkshop.writeAndLog(quatrain, quatrainFilePath, quatrainFileName, false, fileWorkshop, currentDateTime, logFilePath, logFileName, null, ' ', ' ', false, false);
         System.out.println("Verification file...");
         System.out.println();
         String stringFromFile = fileWorkshop.readFile(quatrainFilePath, quatrainFileName);
