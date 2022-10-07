@@ -65,7 +65,7 @@ public class AccountWorkshop {
 
         if (!checkUserExisting(fileWorkshop, userFilePath, userFileName)){
             System.out.println("User does not exists. Please register!");
-            fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exists - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
+            fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exist - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
 
             user.setStatus("register"); // if user file does not exist - do registration
             return authorizationPassed;

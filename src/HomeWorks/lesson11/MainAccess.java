@@ -24,10 +24,9 @@ public class MainAccess {
         String currentDateTime = new TimeWorkshop().getCurrentDateTime();
 
         User user = new User();
-
         MatchWorkshop matchString = new MatchWorkshop();
-
         FileWorkshop fileWorkshop = new FileWorkshop();
+        AccountWorkshop accountWorkshop = new AccountWorkshop();
 
         String quatrainFilePath = "src/resources/poetry/";
         String quatrainFileName = "quatrain.txt";
@@ -50,15 +49,13 @@ public class MainAccess {
         quatrain(quatrain, currentDateTime, fileWorkshop, quatrainFilePath, quatrainFileName, logFilePath, logFileName);
 
         //2. and 3. - mixed
-        System.out.println("\n------- GETTING ACCESS ------\n! For instant EXIT - type Q !");
-        boolean registred = false;
-        boolean authorized = false;
+        System.out.println("\nTasks #2 and #3 - mixed");
+        System.out.println("\n--------- GET ACCESS --------\n! For instant EXIT - type Q !");
 
         do {
-            if (user.getStatus().equals("authorize") && !(authorized = new AccountWorkshop().authorization(user, fileWorkshop, userFilePath, userFileName, logFilePath, logFileName)));
-            if (user.getStatus().equals("register") && (registred = new AccountWorkshop().registration(user, fileWorkshop, matchString, userFilePath, userFileName, logFilePath, logFileName)));
+            if (user.getStatus().equals("authorize")) accountWorkshop.authorization(user, fileWorkshop, userFilePath, userFileName, logFilePath, logFileName);
+            if (user.getStatus().equals("register")) accountWorkshop.registration(user, fileWorkshop, matchString, userFilePath, userFileName, logFilePath, logFileName);
         } while ((!user.getStatus().equals("work")) && !(user.getStatus().equals("exit")));
-
 
         if (user.getStatus().equals("work")) {
             System.out.println("=================");

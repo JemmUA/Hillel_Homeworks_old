@@ -5,6 +5,8 @@ public class User {
 //    private String surName;
     private String login;
     private String password;
+    private boolean authorized;
+    private boolean registered;
     private String status; // register, authorize, work, exit
 
     public User() {
@@ -31,6 +33,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isAuthorized() {
+        return authorized;
+    }
+
+    public void setAuthorized(boolean authorized) {
+        this.authorized = authorized;
+    }
+
+    public boolean isRegistered() {
+        return registered;
+    }
+
+    public void setRegistered(boolean registered) {
+        this.registered = registered;
     }
 
     public String getStatus() {
