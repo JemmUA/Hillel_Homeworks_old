@@ -19,7 +19,7 @@ public class AccountWorkshop {
         String passwordMatching = null;
         do {
             System.out.println(String.format("Please, enter new login (%s):", matchString.getLoginRegexDescription()));
-            login = scan.readConsole();
+            login = scan.readConsole().strip();
             if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return; // exit
             userFileName = login + ".txt";
         } while (!matchString.checkRegex(login, matchString.getLoginRegex()));
@@ -34,12 +34,12 @@ public class AccountWorkshop {
         System.out.println("New login accepted: " + login);
         do {
             System.out.println(String.format("Please, enter new password (%s):", matchString.getPasswordRegexDescription()));
-            password = scan.readConsole();
+            password = scan.readConsole().strip();
             if (checkExit(password, user, fileWorkshop, logFilePath, logFileName)) return; // exit
         } while (!matchString.checkRegex(password, matchString.getPasswordRegex()));
         do {
             System.out.println("Please, repeat new password: " + "*".repeat(password.length()));
-            passwordMatching = scan.readConsole();
+            passwordMatching = scan.readConsole().strip();
             if (checkExit(passwordMatching, user, fileWorkshop, logFilePath, logFileName)) return; // exit
         } while (!matchString.checkRegex(passwordMatching, matchString.getPasswordRegex()));
         if (password.equals(passwordMatching)) {
@@ -63,24 +63,22 @@ public class AccountWorkshop {
         ScanWorkshop scan = new ScanWorkshop();
         fileWorkshop.writeLogRemark(logFilePath, logFileName, "Authorization started - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
 
-        System.out.println("Enter login:");
-        String login = scan.readConsole();
+        System.out.println("Enter login or press 'Enter' for registration :");
+        String login = scan.readConsole().strip();
         if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return; // exit
         userFileName = login + ".txt";
 
-        if (!checkUserExisting(fileWorkshop, userFilePath, userFileName)){
+        if (!checkUserExisting(fileWorkshop, userFilePath, userFileName) || login.isEmpty()){
             System.out.println("User does not exist. Please register!");
             fileWorkshop.writeLogRemark(logFilePath, logFileName, "User does not exist - ".concat(TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
-
             user.setStatusRegister(); // if user file does not exist - do registration
             return;
         }
         for (int i = 1; i < 10; i++){ // tries limited by conditions below
             System.out.println("Enter password:");
-            String password = scan.readConsole();
+            String password = scan.readConsole().strip();
             if (checkExit(login, user, fileWorkshop, logFilePath, logFileName)) return; // exit
             String[] arrFromFile =  fileWorkshop.readFile(userFilePath, userFileName).split(",");
-            //            System.out.println("try " + i);
             if (login.equals(arrFromFile[0].strip()) && password.equals(arrFromFile[1].strip()) ){
                 fileWorkshop.writeLogRemark(logFilePath, logFileName, String.format("User: %s. Authorization successfully completed - %s", login, TimeWorkshop.getCurrentDateTime()), ' ', ' ', false, false);
                 System.out.println("Authorization SUCCESSFUL");

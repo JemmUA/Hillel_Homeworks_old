@@ -10,13 +10,13 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FileWorkshop {
-    static String fileLastOperation;
+    private String fileLastOperation;
 
-    public static String getFileLastOperation() {
+    public String getFileLastOperation() {
         return fileLastOperation;
     }
 
-    public static void setFileLastOperation(String fileLastOper) {
+    public void setFileLastOperation(String fileLastOper) {
         fileLastOperation = fileLastOper;
     }
     public void checkCreatePath (String path) {
@@ -88,7 +88,7 @@ public class FileWorkshop {
     }
     public void writeAndLog (String fileData, String myFilePath, String myFileName, boolean append, FileWorkshop fileWorkshop, String currentDateTime, String logFilePath, String logFileName, String remark, char overline, char underline, boolean spaceTop, boolean spaceBottom){
         fileWorkshop.writeFile(myFilePath, myFileName, fileData, append);
-        fileWorkshop.writeLog(logFilePath, logFileName, currentDateTime, myFilePath, myFileName, FileWorkshop.getFileLastOperation());
+        fileWorkshop.writeLog(logFilePath, logFileName, currentDateTime, myFilePath, myFileName, fileWorkshop.getFileLastOperation());
 
     }
 }
