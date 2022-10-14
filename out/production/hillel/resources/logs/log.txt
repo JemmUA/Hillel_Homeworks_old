@@ -1,41 +1,30 @@
 
 ========================================
-Start HOMEWORK #09 - 10-10-2022 00:24:26
+Start HOMEWORK #09 - 14-10-2022 09:14:05
 ========================================
-File rewrite: src/resources/poetry/quatrain.txt - 10-10-2022 00:24:26
+File rewrite: src/resources/poetry/quatrain.txt - 14-10-2022 09:14:05
                                            
-Authorization started - 10-10-2022 00:24:26
+Authorization started - 14-10-2022 09:14:05
                                          
-User does not exist - 10-10-2022 00:24:33
+User does not exist - 14-10-2022 09:14:32
                                            
-Registration started - 10-10-2022 00:24:33
+Registration started - 14-10-2022 09:14:32
 
-                                         
-Emergency exit by Q - 10-10-2022 00:24:40
-
-======================================
-End HOMEWORK #09 - 10-10-2022 00:24:26
-======================================
-
-========================================
-Start HOMEWORK #09 - 10-10-2022 00:24:45
-========================================
-File rewrite: src/resources/poetry/quatrain.txt - 10-10-2022 00:24:45
-                                           
-Authorization started - 10-10-2022 00:24:46
-                                         
-User does not exist - 10-10-2022 00:24:48
-                                           
-Registration started - 10-10-2022 00:24:48
-
-File rewrite: src/resources/users/sssss.txt - 10-10-2022 00:25:32
-                                                                      
-User: sssss. Registration successfully completed - 10-10-2022 00:25:32
-                                           
-Authorization started - 10-10-2022 00:25:32
+File rewrite: src/resources/users/lalala.txt - 14-10-2022 09:15:09
                                                                        
-User: sssss. Authorization successfully completed - 10-10-2022 00:25:38
+User: lalala. Registration successfully completed - 14-10-2022 09:15:09
+                                           
+Authorization started - 14-10-2022 09:15:09
+                                                                        
+User: lalala. Authorization successfully completed - 14-10-2022 09:15:28
 
 ======================================
-End HOMEWORK #09 - 10-10-2022 00:24:45
+End HOMEWORK #09 - 14-10-2022 09:14:05
 ======================================
+
+========================================
+Start HOMEWORK #09 - 14-10-2022 10:11:06
+========================================
+File rewrite: src/resources/poetry/quatrain.txt - 14-10-2022 10:11:06
+                                           
+Authorization started - 14-10-2022 10:11:06
