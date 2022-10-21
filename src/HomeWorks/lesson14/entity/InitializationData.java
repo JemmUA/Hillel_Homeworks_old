@@ -65,23 +65,20 @@ public class InitializationData {
 
     private void equalizeListSizes (Information information) {
         System.out.print("\nEqualizing List Sizes. ");
-        ArrayList<String> nicksList = information.getNicksList();
-        HashSet<String> mailsList = information.getMailsList();
-        HashMap<String, String> mailNickMap= information.getMailNickMap();
 
         //set is smallest
         int smallestSize = information.getMailsList().size();
 
         // equalize list sizes
         while (information.getNicksList().size() > smallestSize) {
-            nicksList.remove(information.getNicksList().size() - 1);
+            information.getNicksList().remove(information.getNicksList().size() - 1);
         }
-        if ((smallestSize == nicksList.size()) &&
-                (smallestSize == mailsList.size()) &&
-                (smallestSize == mailNickMap.size()) ){
-            System.out.println("All lists sizes equalizes " + nicksList.size()) ;
+        if ((smallestSize == information.getNicksList().size()) &&
+                (smallestSize == information.getMailsList().size()) &&
+                (smallestSize == information.getMailNickMap().size()) ){
+            System.out.println("All lists sizes equalizes " + information.getNicksList().size()) ;
         } else {
-            System.out.println("Equalizing of lists sizes failed." + nicksList.size());
+            System.out.println("Equalizing of lists sizes failed." + information.getNicksList().size());
         }
     }
 
