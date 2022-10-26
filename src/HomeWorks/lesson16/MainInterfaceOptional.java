@@ -48,6 +48,9 @@ public class MainInterfaceOptional {
         for (Object something : anythingList) {
             System.out.println(checkMail.checkOptionalNull(something).orElse("Wrong data!"));
         }
+        //getting valid mail
+        System.out.println("\nGetting valid mail");
+        System.out.println(checkMail.checkOptionalNull("good@mail.ua").orElseThrow());
 
         //getting error with null
         System.out.println("\nGetting error!");
