@@ -46,7 +46,7 @@ public class MainInterfaceOptional {
 
         //get data from Optional, actually we get valid emails
         for (Object something : anythingList) {
-            System.out.println(checkMail.checkOptionalNull(something).orElse("Wrong data!"));
+            System.out.println(checkMail.checkOptionalNull(something.toString()).orElse("Wrong data!"));
         }
         //getting valid mail
         System.out.println("\nGetting valid mail");
