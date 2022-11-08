@@ -13,7 +13,7 @@ public static void main(String[] args) {
     InitializationData initializationData = new InitializationData();
 //    initializationData.fillData(); // test
 
-    ArrayList<Integer> numbersInteger = new  ArrayList<>();
+    ArrayList<Integer> numbersInteger = new ArrayList<>();
     for (int i = 0; i < 10; i++) numbersInteger.add((int)(Math.round(1000000000 * Math.random()))); // 10 random numbers as nicks
 
     processingData(numbersInteger, initializationData.fillData()); // Execute HW. End.

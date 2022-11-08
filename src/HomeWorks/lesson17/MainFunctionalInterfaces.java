@@ -32,7 +32,7 @@ public class MainFunctionalInterfaces {
         digits.put(9,"Nine");
         digits.put(10,"Ten");
         Function<Integer, String> function = (digit) -> digits.containsKey(digit) ? digits.get(digit) : "unknown";
-        for (int i = 1; i < 12; i++) System.out.println(function.apply(i));
+        for (int i = 1; i < 12; i++) System.out.println(i + ": " + function.apply(i));
 
         System.out.println("\nSupplier\n-------------");
         Supplier<Object> supplier = () -> "Hello world! :)";
