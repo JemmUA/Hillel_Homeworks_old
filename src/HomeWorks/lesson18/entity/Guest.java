@@ -5,6 +5,7 @@ public class Guest {
     private static Integer guestsCount = 0;
 
     public Guest() {
+        guestsCount++;
     }
 
     public Guest(String name) {
