@@ -14,7 +14,6 @@ public class MainStreamAPI {
     public static void main(String[] args) {
 
         taskHeader(1);
-        System.out.println("Empty collection - empty print");
         Stream<Object> emptyStream = Stream.empty(); // create empty stream
         emptyStream
                 .distinct() // choose distinct from nothing
