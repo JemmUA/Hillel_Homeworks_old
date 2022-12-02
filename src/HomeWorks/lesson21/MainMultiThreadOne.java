@@ -7,7 +7,7 @@ import HomeWorks.lesson21.thread.RunnableThread;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
-public class MainMultiThread {
+public class MainMultiThreadOne {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 //        System.out.println(Thread.currentThread().getName());
