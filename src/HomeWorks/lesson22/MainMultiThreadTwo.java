@@ -32,9 +32,9 @@ private static int downCount = 9;
 
         // Synchronization part of the CODE
         System.out.println("\nSynchronization part of the CODE ---");
-        Synchronization syncroServiceTwo = new Synchronization();
+        Synchronization synchroServiceTwo = new Synchronization();
         for (int i = 0; i < 5; i++) {
-            Thread thread = new Thread(() -> syncroServiceTwo.synchroPart());
+            Thread thread = new Thread(() -> synchroServiceTwo.synchroPart());
             thread.start();
         }
         Thread.sleep(100);
