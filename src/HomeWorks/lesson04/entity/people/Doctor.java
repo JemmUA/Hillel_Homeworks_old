@@ -88,7 +88,7 @@ public final class Doctor extends Professional {
     }
     @Override
     public void doBest(String patient) {
-        System.out.println(getProfNameSurname() + " save life of " + patient + "." );
+        System.out.println(getProfNameSurname() + " saves life of " + patient + "." );
     }
 
     @Override
