@@ -91,7 +91,7 @@ public class MainGitAdv {
     a0ff0da bake a cake
     0adf49f Merge branch 'develop' of https://github.com/JemmUA/Hillel_Homeworks into develop
     a21d68c add some necessary changes to develop
-    a7c8baf add some neccesary changes to develop
+    a7c8baf add some necessary changes to develop
     Находим! Хеш a0ff0da. Тянем за вишенку )))
 
     git cherry-pick a0ff0da --no-commit
